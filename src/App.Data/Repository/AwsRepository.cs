@@ -12,17 +12,10 @@ namespace App.Data
 {
     public class AwsRepository : IAwsRepository
     {
-        AmazonS3Client s3Client;
-        AmazonSQSClient sqsClient;
-        string bucketName;
-        string queueUrl;
-        public AwsRepository()
-        {
-            s3Client = new AmazonS3Client(Environment.GetEnvironmentVariable("AWS_ACCESS_KEY"), Environment.GetEnvironmentVariable("AWS_SECRET_KEY"), Amazon.RegionEndpoint.USEast1);
-            sqsClient = new AmazonSQSClient(Environment.GetEnvironmentVariable("AWS_ACCESS_KEY"), Environment.GetEnvironmentVariable("AWS_SECRET_KEY"),Amazon.RegionEndpoint.USEast1);
-            bucketName = Environment.GetEnvironmentVariable("AWS_S3_BUCKET_NAME");
-            queueUrl = Environment.GetEnvironmentVariable("AWS_SQS_URL");
-        }
+        AmazonS3Client s3Client = new AmazonS3Client(Environment.GetEnvironmentVariable("AWS_ACCESS_KEY"), Environment.GetEnvironmentVariable("AWS_SECRET_KEY"), Amazon.RegionEndpoint.USEast1);
+        AmazonSQSClient sqsClient = new AmazonSQSClient(Environment.GetEnvironmentVariable("AWS_ACCESS_KEY"), Environment.GetEnvironmentVariable("AWS_SECRET_KEY"), Amazon.RegionEndpoint.USEast1);
+        string bucketName = Environment.GetEnvironmentVariable("AWS_S3_BUCKET_NAME");
+        string queueUrl = Environment.GetEnvironmentVariable("AWS_SQS_URL");
 
         public async Task<string> SalvaArquivo(Arquivo arquivo)
         {
@@ -43,7 +36,7 @@ namespace App.Data
                     await s3Client.PutObjectAsync(request);
                 };
 
-                 result = string.Format("http://{0}.s3.amazonaws.com/{1}", bucketName, arquivo.ArquivoNome);
+                result = string.Format("http://{0}.s3.amazonaws.com/{1}", bucketName, arquivo.ArquivoNome);
 
                 MensagemArquivo mensagem = new MensagemArquivo()
                 {
