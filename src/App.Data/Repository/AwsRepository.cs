@@ -49,7 +49,7 @@ namespace App.Data
                 {
                     IdArquivo = arquivo.IdArquivo,
                     NomeArquivo = arquivo.ArquivoNome,
-                    Descricao = result
+                    UrlArquivo = result
                 };
 
                 EnviaMensagemAsync(mensagem);

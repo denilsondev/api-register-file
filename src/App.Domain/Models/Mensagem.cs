@@ -6,7 +6,7 @@ namespace App.Domain.Models
     {
         public Guid IdArquivo { get; set; }
         public string NomeArquivo { get; set; }
-        public string Descricao { get; set; }
+        public string UrlArquivo { get; set; }
 
         public string CriaDescricaoMensagem()
         {

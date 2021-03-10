@@ -26,7 +26,7 @@ namespace App.Application.Services
             {
                 IdArquivo = arquivo.IdArquivo,
                 NomeArquivo = arquivo.ArquivoNome,
-                Descricao = retorno
+                UrlArquivo = retorno
             };
 
             return result;
