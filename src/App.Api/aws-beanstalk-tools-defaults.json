@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-east-1",
+    "configuration" : "Debug",
+    "framework"     : "netcoreapp3.1",
+    "self-contained" : false,
+    "application"    : "api-register-file",
+    "environment"    : "api-register-file-test",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-f43b0af8\";\"aws:ec2:vpc,Subnets\"=\"subnet-9ee582bf\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.1.3 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "api-register-file-test",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}
