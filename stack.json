@@ -40,32 +40,23 @@
         }
     },
     "Resources": {
-        "SQSQ2ZH6Q": {
-            "Type": "AWS::SQS::Queue",
-            "Properties": {},
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "c006c4de-370f-4c48-9647-30a2057e3b23"
-                }
-            }
-        },
+        "Type" : "AWS::SQS::Queue",
+        "Properties" : {
+            "QueueName" : "queue-challenge1",
+          },
         "S3B55Z90": {
-            "Type": "AWS::S3::Bucket",
-            "Properties": {},
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "08772703-c8e9-4e77-ae57-3421c65313fd"
-                }
-            }
+            "Type" : "AWS::S3::Bucket",
+            "Properties" : {
+                "BucketName" : "register-challenge",
+                "AccessControl" : "public"
+              }
         },
         "EBA3VU84": {
-            "Type": "AWS::ElasticBeanstalk::Application",
-            "Properties": {},
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "fde0bf3b-ea40-4e0a-9cb8-b7bd2c204010"
-                }
-            }
+            "Type" : "AWS::ElasticBeanstalk::Environment",
+            "Properties" : {
+                "EnvironmentName" : "api-register-file-test",
+                "PlatformArn" : ".NET Core running on 64bit Amazon Linux 2/2.1.3"
+              }
         }
     }
 }
