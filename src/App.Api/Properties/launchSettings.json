@@ -24,10 +24,10 @@
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "AWS_ACCESS_KEY": "AKIAIPZPI24BMFLOUM7Q",
-        "AWS_SECRET_KEY": "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",
-        "AWS_S3_BUCKET_NAME": "register-challenge",
-        "AWS_SQS_URL": "https://sqs.us-east-1.amazonaws.com/761781258048/queue-challenge"
+        "AWS_ACCESS_KEY": "test-access-key",
+        "AWS_SECRET_KEY": "test-secret-key",
+        "AWS_S3_BUCKET_NAME": "test-bucket-name",
+        "AWS_SQS_URL": "https://sqs.us-east-1.amazonaws.com/test/queue-challenge"
       }
     }
   }
